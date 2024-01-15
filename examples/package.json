@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "dev": "fastly compute serve --watch",
+    "prebuild": "node ./build.js",
+    "build": "js-compute-runtime bin/index.js bin/main.wasm",
+    "deploy": "fastly compute publish"
+  },
+  "devDependencies": {
+    "@types/jsonnet": "^0.0.8",
+    "esbuild": "^0.17.12"
+  },
+  "dependencies": {
+    "@fastly/js-compute": "^2.4.0",
+    "arakoo-jsonnet": "file:../jsonnet/",
+    "esbuild-plugins-node-modules-polyfill": "^1.6.1",
+    "hono": "^3.12.3"
+  }
+}
